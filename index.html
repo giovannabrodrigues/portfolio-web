@@ -3,12 +3,1724 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Giovanna Rodrigues | Portfólio</title>
+
+    <style>
+
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --heather: #877499;
+            --viridian: #679F9F;
+            --sandstone: #E6D4BF;
+            --candy: #E18299;
+            --azur: #7FA9D3;
+
+            --background: #FAF8F6;
+            --white: #FFFFFF;
+            --text: #34343A;
+            --text-light: #6F6B70;
+            --dark-green: #34473F;
+            --border: #ECE5DF;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+
+        /* =========================
+           MENU
+        ========================== */
+
+        header {
+            background: rgba(250, 248, 246, 0.97);
+            border-bottom: 1px solid var(--border);
+
+            position: sticky;
+            top: 0;
+
+            z-index: 100;
+        }
+
+        nav {
+            width: min(1100px, 90%);
+            margin: auto;
+
+            min-height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            left: 0;
+
+            font-size: 20px;
+            font-weight: bold;
+
+            color: var(--heather);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: var(--text);
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--candy);
+        }
+
+
+        /* =========================
+           TOPO
+        ========================== */
+
+        .hero {
+            min-height: 82vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 70px 0;
+        }
+
+        .hero-card {
+            width: min(1100px, 90%);
+            margin: auto;
+
+            background: var(--white);
+
+            border-radius: 28px;
+            padding: 65px;
+
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+
+            gap: 60px;
+            align-items: center;
+
+            box-shadow: 0 18px 50px rgba(70, 60, 70, 0.08);
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            background: var(--sandstone);
+
+            top: -110px;
+            right: -70px;
+
+            opacity: 0.55;
+        }
+
+        .tag {
+            display: inline-block;
+
+            background: #F2EDF5;
+            color: var(--heather);
+
+            padding: 7px 14px;
+            border-radius: 30px;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 66px);
+            line-height: 1.05;
+
+            color: var(--dark-green);
+
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: clamp(18px, 2.5vw, 25px);
+
+            color: var(--viridian);
+
+            font-weight: 500;
+
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            max-width: 690px;
+
+            color: var(--text-light);
+
+            font-size: 17px;
+        }
+
+        .buttons {
+            margin-top: 32px;
+
+            display: flex;
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 12px 20px;
+
+            border-radius: 11px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            transition: 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .github {
+            background: var(--heather);
+            color: white;
+        }
+
+        .linkedin {
+            background: var(--candy);
+            color: white;
+        }
+
+        .projects-button {
+            background: white;
+
+            border: 2px solid var(--viridian);
+
+            color: var(--viridian);
+        }
+
+
+        /* =========================
+           CARD VISUAL
+        ========================== */
+
+        .code-card {
+            background: var(--dark-green);
+            color: white;
+
+            border-radius: 20px;
+
+            padding: 24px;
+
+            box-shadow: 15px 15px 0 var(--sandstone);
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .code-dots {
+            display: flex;
+
+            gap: 7px;
+
+            margin-bottom: 24px;
+        }
+
+        .code-dots span {
+            width: 10px;
+            height: 10px;
+
+            border-radius: 50%;
+        }
+
+        .code-dots span:nth-child(1) {
+            background: var(--candy);
+        }
+
+        .code-dots span:nth-child(2) {
+            background: var(--sandstone);
+        }
+
+        .code-dots span:nth-child(3) {
+            background: var(--viridian);
+        }
+
+        .code-content {
+            font-family: "Courier New", monospace;
+
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .code-purple {
+            color: #D8C5E7;
+        }
+
+        .code-pink {
+            color: #F4A9BB;
+        }
+
+        .code-blue {
+            color: #A8CDEC;
+        }
+
+
+        /* =========================
+           SEÇÕES
+        ========================== */
+
+        .content-section {
+            padding: 90px 0;
+        }
+
+        .section-label {
+            color: var(--candy);
+
+            font-size: 13px;
+            font-weight: bold;
+
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 4vw, 42px);
+
+            color: var(--dark-green);
+
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            max-width: 760px;
+
+            color: var(--text-light);
+
+            margin-bottom: 40px;
+        }
+
+
+        /* =========================
+           SOBRE
+        ========================== */
+
+        .about-box {
+            background: var(--sandstone);
+
+            border-radius: 25px;
+
+            padding: 45px;
+
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+
+            gap: 45px;
+        }
+
+        .about-box p {
+            color: #514D49;
+        }
+
+        .about-highlight {
+            background: rgba(255, 255, 255, 0.58);
+
+            border-radius: 18px;
+
+            padding: 27px;
+        }
+
+        .about-highlight strong {
+            display: block;
+
+            color: var(--heather);
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           CONHECIMENTOS
+        ========================== */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 15px;
+        }
+
+        .skill-card {
+            background: white;
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            border: 1px solid var(--border);
+
+            transition: 0.2s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow: 0 12px 30px rgba(60, 50, 60, 0.08);
+        }
+
+        .skill-number {
+            color: var(--candy);
+
+            font-size: 12px;
+            font-weight: bold;
+
+            margin-bottom: 14px;
+        }
+
+        .skill-card h3 {
+            color: var(--dark-green);
+
+            margin-bottom: 7px;
+
+            font-size: 17px;
+        }
+
+        .skill-card p {
+            color: var(--text-light);
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           PROJETOS
+        ========================== */
+
+        #projetos {
+            background: #F2EDEF;
+        }
+
+        .project-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 22px;
+        }
+
+        .project-card {
+            background: white;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            border: 1px solid #EEE5E8;
+        }
+
+        .project-top {
+            height: 12px;
+        }
+
+        .project-card:nth-child(1) .project-top {
+            background: var(--viridian);
+        }
+
+        .project-card:nth-child(2) .project-top {
+            background: var(--heather);
+        }
+
+        .project-card:nth-child(3) .project-top {
+            background: var(--azur);
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-type {
+            color: var(--candy);
+
+            font-size: 12px;
+            font-weight: bold;
+
+            text-transform: uppercase;
+        }
+
+        .project-card h3 {
+            margin: 10px 0;
+
+            color: var(--dark-green);
+
+            font-size: 22px;
+        }
+
+        .project-card p {
+            color: var(--text-light);
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+        }
+
+        .project-tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 22px;
+        }
+
+        .project-tags span {
+            background: #F4F1EF;
+
+            border-radius: 20px;
+
+            padding: 6px 10px;
+
+            font-size: 12px;
+
+            color: #5B5855;
+        }
+
+        .project-link {
+            color: var(--heather);
+
+            font-size: 14px;
+            font-weight: bold;
+
+            margin-right: 15px;
+        }
+
+
+        /* =========================
+           FORMAÇÃO
+        ========================== */
+
+        .education-grid {
+            display: grid;
+            gap: 18px;
+        }
+
+        .education-card {
+            background: white;
+
+            border-left: 7px solid var(--azur);
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            box-shadow: 0 10px 30px rgba(50, 50, 60, 0.05);
+        }
+
+        .education-type {
+            color: var(--candy);
+
+            font-size: 12px;
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+            margin-bottom: 6px;
+        }
+
+        .education-card h3 {
+            color: var(--dark-green);
+
+            margin-bottom: 6px;
+        }
+
+        .education-card strong {
+            color: var(--heather);
+        }
+
+        .education-card p {
+            color: var(--text-light);
+
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           CURSOS
+        ========================== */
+
+        .courses-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(240px, 1fr));
+
+            gap: 15px;
+        }
+
+        .course-card {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            padding: 24px;
+        }
+
+        .course-card::before {
+            content: "CERTIFICAÇÃO";
+
+            display: block;
+
+            color: var(--viridian);
+
+            font-size: 11px;
+            font-weight: bold;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 12px;
+        }
+
+        .course-card h3 {
+            color: var(--dark-green);
+
+            font-size: 17px;
+
+            margin-bottom: 7px;
+        }
+
+        .course-card p {
+            color: var(--text-light);
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           EXPERIÊNCIA
+        ========================== */
+
+        .experience-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .experience-card {
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 30px;
+
+            border: 1px solid var(--border);
+        }
+
+        .experience-card:first-child {
+            border-top: 7px solid var(--viridian);
+        }
+
+        .experience-card:last-child {
+            border-top: 7px solid var(--heather);
+        }
+
+        .experience-date {
+            color: var(--candy);
+
+            font-size: 12px;
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+        .experience-card h3 {
+            color: var(--dark-green);
+
+            margin-bottom: 4px;
+        }
+
+        .experience-company {
+            color: var(--heather);
+
+            font-weight: bold;
+
+            margin-bottom: 18px;
+        }
+
+        .experience-card ul {
+            padding-left: 20px;
+        }
+
+        .experience-card li {
+            color: var(--text-light);
+
+            margin-bottom: 8px;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CONTATO
+        ========================== */
+
+        .contact {
+            padding: 90px 0;
+        }
+
+        .contact-card {
+            background: var(--dark-green);
+
+            border-radius: 28px;
+
+            padding: 60px;
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .contact-card h2 {
+            font-size: clamp(30px, 4vw, 44px);
+
+            margin-bottom: 12px;
+        }
+
+        .contact-card p {
+            color: #D7DEDA;
+
+            margin-bottom: 30px;
+        }
+
+        .contact-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .contact-buttons a {
+            padding: 12px 20px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+        }
+
+        .contact-email {
+            background: var(--sandstone);
+
+            color: var(--dark-green);
+        }
+
+        .contact-linkedin {
+            background: var(--candy);
+
+            color: white;
+        }
+
+        .contact-github {
+            background: var(--heather);
+
+            color: white;
+        }
+
+
+        /* =========================
+           RODAPÉ
+        ========================== */
+
+        footer {
+            text-align: center;
+
+            padding: 25px;
+
+            color: var(--text-light);
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVO
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            nav {
+                justify-content: flex-start;
+            }
+
+            .logo {
+                position: static;
+            }
+
+            .hero {
+                padding: 35px 0;
+            }
+
+            .hero-card {
+                grid-template-columns: 1fr;
+
+                padding: 38px 26px;
+
+                gap: 40px;
+            }
+
+            .about-box,
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                padding: 45px 25px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
+
 <body>
-    <h1>Giovanna Rodrigues</h1>
-    <p>Estudante de Análise e Desenvolvimento de Sistemas</p>
+
+
+    <!-- MENU -->
+
+    <header>
+
+        <nav>
+
+            <a href="#" class="logo">
+                GR.
+            </a>
+
+            <div class="nav-links">
+
+                <a href="#sobre">Sobre</a>
+
+                <a href="#conhecimentos">Conhecimentos</a>
+
+                <a href="#projetos">Projetos</a>
+
+                <a href="#formacao">Formação</a>
+
+                <a href="#cursos">Cursos</a>
+
+                <a href="#experiencia">Experiência</a>
+
+                <a href="#contato">Contato</a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- APRESENTAÇÃO -->
+
+    <section class="hero">
+
+        <div class="hero-card">
+
+            <div class="hero-content">
+
+                <div class="tag">
+                    Portfólio profissional
+                </div>
+
+                <h1>
+                    Giovanna Rodrigues
+                </h1>
+
+                <h2>
+                    Estágio em Tecnologia | Análise e Desenvolvimento de Sistemas
+                </h2>
+
+                <p>
+                    Estudante de Análise e Desenvolvimento de Sistemas,
+                    com interesse em programação, desenvolvimento,
+                    dados e Tecnologia da Informação.
+                    Neste portfólio apresento projetos e conhecimentos
+                    desenvolvidos durante minha formação.
+                </p>
+
+                <div class="buttons">
+
+                    <a
+                        href="https://github.com/giovannabrodrigues"
+                        target="_blank"
+                        class="button github">
+
+                        GitHub
+
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/giovanna-b-rodrigues"
+                        target="_blank"
+                        class="button linkedin">
+
+                        LinkedIn
+
+                    </a>
+
+                    <a
+                        href="#projetos"
+                        class="button projects-button">
+
+                        Ver projetos ↓
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="code-card">
+
+                <div class="code-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="code-content">
+
+                    <div class="code-purple">
+                        &lt;portfolio&gt;
+                    </div>
+
+                    <div>
+                        &nbsp;&nbsp;nome:
+                        <span class="code-pink">
+                            "Giovanna"
+                        </span>;
+                    </div>
+
+                    <div>
+                        &nbsp;&nbsp;formação:
+                        <span class="code-blue">
+                            "ADS"
+                        </span>;
+                    </div>
+
+                    <div>
+                        &nbsp;&nbsp;área:
+                        <span class="code-pink">
+                            "Tecnologia"
+                        </span>;
+                    </div>
+
+                    <div>
+                        &nbsp;&nbsp;status:
+                        <span class="code-blue">
+                            "aprendendo"
+                        </span>;
+                    </div>
+
+                    <div class="code-purple">
+                        &lt;/portfolio&gt;
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SOBRE -->
+
+    <section
+        class="content-section"
+        id="sobre">
+
+        <div class="container">
+
+            <div class="section-label">
+                Sobre mim
+            </div>
+
+            <h2 class="section-title">
+                Experiência profissional aliada a uma nova formação em Tecnologia.
+            </h2>
+
+            <div class="about-box">
+
+                <div>
+
+                    <p>
+                        Minha trajetória profissional começou na área da saúde,
+                        em ambientes que exigem responsabilidade,
+                        organização, precisão e tomada de decisão.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Atualmente curso Análise e Desenvolvimento de Sistemas
+                        e direciono minha formação para Tecnologia,
+                        buscando desenvolver conhecimentos técnicos
+                        por meio de estudos e projetos acadêmicos e pessoais.
+                    </p>
+
+                </div>
+
+
+                <div class="about-highlight">
+
+                    <strong>
+                        Competências que levo para Tecnologia
+                    </strong>
+
+                    <p>
+                        Raciocínio lógico e analítico, resolução de problemas,
+                        organização, atenção aos detalhes, aprendizado contínuo,
+                        trabalho em equipe e comunicação.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONHECIMENTOS -->
+
+    <section
+        class="content-section"
+        id="conhecimentos">
+
+        <div class="container">
+
+            <div class="section-label">
+                Conhecimentos
+            </div>
+
+            <h2 class="section-title">
+                Tecnologias e ferramentas.
+            </h2>
+
+            <p class="section-description">
+                Conhecimentos desenvolvidos durante a graduação,
+                cursos e projetos.
+            </p>
+
+
+            <div class="skills-grid">
+
+
+                <div class="skill-card">
+
+                    <div class="skill-number">01</div>
+
+                    <h3>Lógica de Programação</h3>
+
+                    <p>
+                        Fundamentos de lógica, algoritmos
+                        e resolução estruturada de problemas.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-number">02</div>
+
+                    <h3>Python</h3>
+
+                    <p>
+                        Fundamentos da linguagem aplicados
+                        durante estudos e formação.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-number">03</div>
+
+                    <h3>Desenvolvimento Web</h3>
+
+                    <p>
+                        HTML, CSS e conhecimentos em
+                        desenvolvimento de páginas web.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-number">04</div>
+
+                    <h3>Banco de Dados</h3>
+
+                    <p>
+                        Conceitos e fundamentos
+                        relacionados a banco de dados.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-number">05</div>
+
+                    <h3>Power BI</h3>
+
+                    <p>
+                        Fundamentos de visualização
+                        e análise de dados.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-number">06</div>
+
+                    <h3>Git & GitHub</h3>
+
+                    <p>
+                        Versionamento, organização
+                        e publicação de projetos.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-number">07</div>
+
+                    <h3>Redes</h3>
+
+                    <p>
+                        Fundamentos de redes
+                        de computadores.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-number">08</div>
+
+                    <h3>Segurança da Informação</h3>
+
+                    <p>
+                        Fundamentos e conceitos
+                        introdutórios de segurança.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-number">09</div>
+
+                    <h3>Pacote Office</h3>
+
+                    <p>
+                        Excel, Word e PowerPoint.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PROJETOS -->
+
+    <section
+        class="content-section"
+        id="projetos">
+
+        <div class="container">
+
+            <div class="section-label">
+                Projetos
+            </div>
+
+            <h2 class="section-title">
+                Projetos acadêmicos e pessoais.
+            </h2>
+
+            <p class="section-description">
+                Trabalhos que registram minha evolução
+                prática durante a formação em Tecnologia.
+            </p>
+
+
+            <div class="project-grid">
+
+
+                <article class="project-card">
+
+                    <div class="project-top"></div>
+
+                    <div class="project-content">
+
+                        <div class="project-type">
+                            Projeto pessoal
+                        </div>
+
+                        <h3>
+                            Portfólio Web
+                        </h3>
+
+                        <p>
+                            Desenvolvimento de portfólio pessoal
+                            para apresentar minha trajetória,
+                            conhecimentos e projetos.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Git</span>
+                            <span>GitHub</span>
+                            <span>GitHub Pages</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/giovannabrodrigues/portfolio-web"
+                            target="_blank"
+                            class="project-link">
+
+                            Ver código →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="project-card">
+
+                    <div class="project-top"></div>
+
+                    <div class="project-content">
+
+                        <div class="project-type">
+                            Projeto acadêmico
+                        </div>
+
+                        <h3>
+                            Projeto Integrador — Ciência de Dados
+                        </h3>
+
+                        <p>
+                            Projeto desenvolvido em equipe durante a graduação.
+                            Minha contribuição incluiu a elaboração
+                            do dashboard e da documentação README.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Ciência de Dados</span>
+                            <span>Dashboard</span>
+                            <span>Documentação</span>
+                            <span>Trabalho em equipe</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/JsEduardo-Duh/PROJETO-INTEGRADOR-DESENVOLVIMENTO-LOW-CODE-EM-CI-NCIA-DE-DADOS"
+                            target="_blank"
+                            class="project-link">
+
+                            Ver projeto →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="project-card">
+
+                    <div class="project-top"></div>
+
+                    <div class="project-content">
+
+                        <div class="project-type">
+                            Próximos projetos
+                        </div>
+
+                        <h3>
+                            Em construção
+                        </h3>
+
+                        <p>
+                            Novos projetos serão adicionados
+                            conforme avanço nos estudos
+                            e na graduação.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Aprendizado contínuo</span>
+                            <span>Tecnologia</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FORMAÇÃO -->
+
+    <section
+        class="content-section"
+        id="formacao">
+
+        <div class="container">
+
+            <div class="section-label">
+                Formação
+            </div>
+
+            <h2 class="section-title">
+                Formação acadêmica.
+            </h2>
+
+
+            <div class="education-grid">
+
+
+                <div class="education-card">
+
+                    <div class="education-type">
+                        Graduação Tecnológica
+                    </div>
+
+                    <h3>
+                        Análise e Desenvolvimento de Sistemas
+                    </h3>
+
+                    <strong>
+                        SENAC
+                    </strong>
+
+                    <p>
+                        Agosto de 2025 — Cursando
+                    </p>
+
+                </div>
+
+
+                <div class="education-card">
+
+                    <div class="education-type">
+                        Formação Técnica
+                    </div>
+
+                    <h3>
+                        Técnico de Enfermagem
+                    </h3>
+
+                    <strong>
+                        EEP HCFMUSP
+                    </strong>
+
+                    <p>
+                        Janeiro de 2022 — Dezembro de 2022
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CURSOS -->
+
+    <section
+        class="content-section"
+        id="cursos">
+
+        <div class="container">
+
+            <div class="section-label">
+                Cursos
+            </div>
+
+            <h2 class="section-title">
+                Cursos e certificações.
+            </h2>
+
+            <p class="section-description">
+                Formação complementar realizada durante
+                meus estudos em Tecnologia.
+            </p>
+
+
+            <div class="courses-grid">
+
+
+                <div class="course-card">
+
+                    <h3>
+                        Introdução à Ciência de Dados
+                    </h3>
+
+                    <p>
+                        Cisco Networking Academy
+                        <br>
+                        Maio de 2026
+                    </p>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <h3>
+                        Linux Unhatched
+                    </h3>
+
+                    <p>
+                        Cisco Networking Academy
+                        <br>
+                        Março de 2026
+                    </p>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <h3>
+                        Fundamentos de Hardware do Computador
+                    </h3>
+
+                    <p>
+                        Cisco Networking Academy
+                        <br>
+                        Novembro de 2025
+                    </p>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <h3>
+                        Fundamentos de Python
+                    </h3>
+
+                    <p>
+                        Cisco Networking Academy
+                        <br>
+                        Agosto de 2025
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- EXPERIÊNCIA -->
+
+    <section
+        class="content-section"
+        id="experiencia">
+
+        <div class="container">
+
+            <div class="section-label">
+                Experiência
+            </div>
+
+            <h2 class="section-title">
+                Experiência profissional.
+            </h2>
+
+            <p class="section-description">
+                Experiências que contribuíram para desenvolver
+                competências aplicáveis também a ambientes de Tecnologia.
+            </p>
+
+
+            <div class="experience-grid">
+
+
+                <article class="experience-card">
+
+                    <div class="experience-date">
+                        JAN/2023 — ATUAL
+                    </div>
+
+                    <h3>
+                        Técnica de Enfermagem em Saúde Mental
+                    </h3>
+
+                    <div class="experience-company">
+                        Instituto Perdizes — HCFMUSP
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            Analisar riscos e apoiar decisões
+                            com base em informações e critérios técnicos.
+                        </li>
+
+                        <li>
+                            Organizar, registrar e conferir
+                            informações com precisão.
+                        </li>
+
+                        <li>
+                            Identificar problemas e atuar
+                            na resolução de ocorrências.
+                        </li>
+
+                        <li>
+                            Utilizar sistemas informatizados
+                            para registro e consulta de informações.
+                        </li>
+
+                        <li>
+                            Priorizar demandas e trabalhar
+                            de forma organizada em ambiente crítico.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+
+                <article class="experience-card">
+
+                    <div class="experience-date">
+                        MAI/2016 — OUT/2017
+                    </div>
+
+                    <h3>
+                        Auxiliar Educacional
+                    </h3>
+
+                    <div class="experience-company">
+                        Kumon Instituto de Educação Ltda.
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            Prestar atendimento e suporte
+                            aos alunos.
+                        </li>
+
+                        <li>
+                            Organizar documentos,
+                            informações e materiais.
+                        </li>
+
+                        <li>
+                            Cadastrar, atualizar e conferir
+                            dados em sistemas informatizados.
+                        </li>
+
+                        <li>
+                            Identificar inconsistências
+                            e realizar correções quando necessário.
+                        </li>
+
+                        <li>
+                            Utilizar ferramentas digitais
+                            no acompanhamento de processos.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTATO -->
+
+    <section
+        class="contact"
+        id="contato">
+
+        <div class="container">
+
+            <div class="contact-card">
+
+                <h2>
+                    Vamos conversar?
+                </h2>
+
+                <p>
+                    Estou em busca de oportunidades de estágio
+                    na área de Tecnologia.
+                </p>
+
+
+                <div class="contact-buttons">
+
+                    <a
+                        href="mailto:giovanna.b.rodrigues02@gmail.com"
+                        class="contact-email">
+
+                        E-mail
+
+                    </a>
+
+
+                    <a
+                        href="https://www.linkedin.com/in/giovanna-b-rodrigues"
+                        target="_blank"
+                        class="contact-linkedin">
+
+                        LinkedIn
+
+                    </a>
+
+
+                    <a
+                        href="https://github.com/giovannabrodrigues"
+                        target="_blank"
+                        class="contact-github">
+
+                        GitHub
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+        Giovanna Rodrigues · Portfólio profissional
+    </footer>
+
+
 </body>
 
 </html>
